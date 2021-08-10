@@ -1,15 +1,11 @@
 import 'package:ecommerceapp/constant.dart';
 import 'package:ecommerceapp/custom_text.dart';
+import 'package:ecommerceapp/view_model/auth_view_model.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:sign_button/constants.dart';
 import 'package:sign_button/create_button.dart';
-
-class LoginScreen extends StatefulWidget {
-  @override
-  _LoginScreenState createState() => _LoginScreenState();
-}
-
-class _LoginScreenState extends State<LoginScreen> {
+class LoginScreen extends GetWidget<AuthViewModel> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -87,7 +83,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 SignInButton.mini(
                   buttonType: ButtonType.google,
                   buttonSize: ButtonSize.large,
-                  onPressed: () {},
+                  onPressed: () {
+                    controller.GoogleSignInMethod();
+                  },
                 ),
                 SizedBox(width: 15,),
                 SignInButton.mini(
